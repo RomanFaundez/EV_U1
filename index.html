@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Registros</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #333333;
+      text-align: center;
+    }
+
+
+    .campo {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .btn-enviar {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn-enviar:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #e9f5ff;
+      border: 1px dashed #007bff;
+      border-radius: 4px;
+      display: none;
+      color: #1a252f;
+    }
+  </style>
+</head>
+<body>
+    <div class="form-container"
+    <h2> Formulario de Registros</h2>
+    <input type="text" id="nombre" class="campo" placeholder="Ingresar nombre" required>
+    <input type="text" id="apellido" class="campo" placeholder="Ingresar apellido" required>
+    <input type="email" id="correo" class="campo" placeholder="Ingresar correo" required>
+    <input type="number" id="edad" class="campo" placeholder="Ingresar edad" required>
+
+    <button type="button" class="btn" onclick="capturarDatos()">Registrar</button>
+
+    <div id="resultado"></div>
+    <script>
+    function capturarDatos() {
+      let nombre = document.getElementById("nombre").value;
+      let apellido = document.getElementById("apellido").value;
+      let correo = document.getElementById("correo").value;
+      let edad = document.getElementById("edad").value;
+
+      let res = document.getElementById("resultado");
+
+      res.innerHTML = `Datos capturados con éxito:<br>
+                       ${nombre} ${apellido} - ${correo} - ${edad} años`;
+      res.style.display = "block";
+    }
+  </script>
+</body>
+</html>
